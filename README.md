@@ -23,84 +23,44 @@ integration with power module (up to 3A), with serial protocol for integration w
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
-What things you need to install the software and how to install them
+For an standard deploy, you must have an ESP8266 (Expressif IoT), an Arduino Nano, 2 USB cables (for uploading the firmware on each module) and two wires to setup the serial communication between both modules.
 
-```
-Give examples
-```
+Adding libraries on Arduino IDE, firmware upload for Arduino Nano and ESP8266 through Arduino IDE are required.
+
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+Wire ESP8266 (communication module) and Arduino Nano (application logic module) as described on [step-by-step guide (pt-BR)](https://github.com/vthayashi/OKIoT/blob/master/Manual%20Kit%20Acelerador%20IoT%20Hedwig.pdf).
 
-Say what the step will be
+Upload the [accelerator firmware binary](https://github.com/vthayashi/OKIoT/blob/master/Resp_190811d.ino.d1_mini.bin) into ESP8266 through Arduino IDE to use it as a black box with Access Pòint, webserver, firmware over-the-air and log functionalities built-in.
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+Upload the [Arduino Nano firmware](https://github.com/vthayashi/OKIoT/tree/master/Nano_190630d) through Arduino IDE. Remember to keep both files within the same folder.
 
 ## Running the tests
 
 Explain how to run the automated tests for this system
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Blynk](https://github.com/blynkkk/blynk-library) - The cloud IoT used (free version)
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Please contact the [author](https://www.linkedin.com/in/victor-hayashi-885083131/) for contributing with this work at the early stage of the project.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Victor Hayashi** - *Initial work* - [vthayashi](https://github.com/vthayashi)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Fabio Hayashi** - *Initial work* - [fabio hayashi](https://www.linkedin.com/in/fabio-hayashi-bab61914/)
+
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Professor Reginaldo Arakaki, Computer Engineering at USP University of São Paulo, Brazil
