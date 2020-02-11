@@ -2,6 +2,8 @@
 
 Check out our previous projects on [Wiki](https://github.com/vthayashi/OKIoT/wiki)!
 
+Check out the full [step-by-step guide (pt-BR)](https://github.com/vthayashi/OKIoT/blob/master/Manual%20Kit%20Acelerador%20IoT%20Hedwig.pdf)!
+
 <img src="https://github.com/vthayashi/OKIoT/blob/master/img/smarthomeareas.PNG" alt="Smart Home major interest areas" width="300"/>
 
 In the context of Internet of Things (IoT - Internet of Things), more and more devices are connected to each other and to the Internet, so that their integrated journeys can deliver value to people, making devices and environments more intelligent.
