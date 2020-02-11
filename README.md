@@ -38,9 +38,9 @@ Upload the [accelerator firmware binary](https://github.com/vthayashi/OKIoT/blob
 
 Upload the [Arduino Nano firmware](https://github.com/vthayashi/OKIoT/tree/master/Nano_190630d) through Arduino IDE. Remember to keep both files within the same folder.
 
-## Running the tests
+## What now?
 
-Explain how to run the automated tests for this system
+Check out [the video tutorials](https://github.com/vthayashi/OKIoT/wiki/IoT-with-Software-Engineering)
 
 ## Built With
 
