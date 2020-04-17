@@ -36,9 +36,3 @@ Consolidated data were created from raw data, and their desciption are presented
 - **tem_h_min**: minimum temperature in ºC
 - **tem_h_max**: maximum temperature in ºC
 - **kwh_total**: estimated total consumption in kVAh
-
-[//]: # (### BoaEnergiaFormatado.csv)
-
-[//]: # (The same as BoaEnergia.csv file, with unix timestamp.)
-
-[//]: # (### BoaEnergiaValidacao.csv)
