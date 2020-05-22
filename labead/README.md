@@ -1,5 +1,13 @@
 # Osciloscópio e Gerador de Funções com Arduino Uno
 Introdução
+Osciloscópio
+Gerador de Funções
+Fonte de Tensão
+Voltímetro
+Relés
+Servo Motor
+E/S Digital
+
 
 ## Setup Arduino e Bibliotecas Python
 Introdução ondas triangular, senoidal e quadrada
@@ -27,7 +35,7 @@ Introdução para CC
 
 1x Fonte 9V regulada
 
-### Diagrama Elétrico e PCB
+### Esquemático e PCB
 Descrição e menção ao Fritzing
 
 ## Shield Gerador de Funções
@@ -40,7 +48,7 @@ Introdução para CA
 
 1x Fonte 9V regulada
 
-### Diagrama Elétrico e PCB
+### Esquemático e PCB
 Descrição e menção ao Fritzing
 
 Atenção: ajuste no HTML (tbm poderia ser por potenciômetros no shield)
