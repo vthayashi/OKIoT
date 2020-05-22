@@ -1,0 +1,285 @@
+<html>
+
+<script>
+var dr_map=[8,11,12,13];
+var	re_map=[7,4];
+var ser="", ser2="";
+var graf_cnt=1;
+
+function iniciar(){
+sto=setInterval(load,500);
+}
+
+function load(){
+	vs=v_sinc.value/5*1023;
+	if(graf_cnt==1) an_pin=0;
+	if(graf_cnt==2) an_pin=1;
+	if(graf_cnt==3) an_pin=2;
+	if(graf_cnt==4) an_pin=3;
+	sa="";
+	if(cb1.checked==false) sa+="&w="+an_pin+","+vs.toFixed(0);
+	sa+=ser; ser=ser2; ser2="";
+	sa+="&dr=8,11-13";//for(i in dr_map){sa+=dr_map[i]+",";}
+	sa+="&re=";for(i in re_map){sa+=re_map[i]+",";}
+	sa+="&ar=0-3";
+	sa=sa.substring(1);
+	if(sa.length>0){client.open('GET', "js?"+sa, true); client.send();}
+}
+
+var client=new XMLHttpRequest();
+client.onreadystatechange=function(){
+	if(this.readyState==4){
+		if(this.status==200){
+			myObj=JSON.parse(this.responseText);
+			if(typeof myObj.w!='undefined'){
+				graf(graf_cnt,myObj.w);
+				graf_cnt++; 
+				if(graf_cnt==2 && cbv1.checked==false){graf_clr(graf_cnt);graf_cnt++;}
+				if(graf_cnt==3 && cbv2.checked==false){graf_clr(graf_cnt);graf_cnt++;}
+				if(graf_cnt==4 && cbv3.checked==false){graf_clr(graf_cnt);graf_cnt++;}
+				if(graf_cnt>4)graf_cnt=1;
+			}
+			if(typeof myObj.ar!='undefined'){
+				ar=myObj.ar;
+				vref=5;
+				for(i=1;i<=3;i++){
+					if(eval("cbv"+i).checked==false)
+					if(ar[i]>=0){ia=ar[i]/1023*vref;eval("A"+i).value=ia.toFixed(2)+"V";}
+					else{eval("A"+i).value="";}
+				}
+			}
+			if(typeof myObj.dr!='undefined'){
+				dr=myObj.dr;
+				for(i=0;i<=3;i++){
+					if(dr[i]>=0){
+						ia=dr[i];
+						if(ia==0) eval("D"+dr_map[i]).style.backgroundColor="blue";
+						else if(ia==1) eval("D"+dr_map[i]).style.backgroundColor="red";
+						else eval("D"+dr_map[i]).style.backgroundColor="gray";
+					}else{
+						eval("D"+dr_map[i]).style.backgroundColor="gray";
+					}
+				}
+			}
+			if(typeof myObj.re!='undefined'){
+				for(i in myObj.re){
+					if(myObj.re[i]==0){ eval("re"+i).style.color="red"; }
+					else { eval("re"+i).style.color="blue"; }
+				}
+			}
+		}
+	}
+}
+
+</script>
+
+<body onload="iniciar()">
+
+<!-- Osciloscopio -->
+<canvas id="layer0" width="384" height="256" style="position: absolute; left: 5; top: 10; z-index: 0;background-color:black;"></canvas>
+<canvas id="layer1" width="384" height="256" style="position: absolute; left: 5; top: 10; z-index: 1;"></canvas>
+<canvas id="layer2" width="384" height="256" style="position: absolute; left: 5; top: 10; z-index: 2;"></canvas>
+<canvas id="layer3" width="384" height="256" style="position: absolute; left: 5; top: 10; z-index: 3;"></canvas>
+<canvas id="layer4" width="384" height="256" style="position: absolute; left: 5; top: 10; z-index: 4;"></canvas>
+
+<script>
+var c = document.getElementById("layer0"); var ctx0 = c.getContext("2d");ctx0.strokeStyle = "#404040";
+var c = document.getElementById("layer1"); var ctx1 = c.getContext("2d");ctx1.fillStyle = "#FF0000";ctx1.strokeStyle = "#FF0000";
+var c = document.getElementById("layer2"); var ctx2 = c.getContext("2d");ctx2.fillStyle = "#00FF00";ctx2.strokeStyle = "#00FF00";
+var c = document.getElementById("layer3"); var ctx3 = c.getContext("2d");ctx3.fillStyle = "#0000FF";ctx3.strokeStyle = "#0000FF";
+var c = document.getElementById("layer4"); var ctx4 = c.getContext("2d");ctx4.fillStyle = "#FFFF00";ctx4.strokeStyle = "#FFFF00";
+ctx0.fillStyle ="#202000";ctx0.font = "bold 40px sans-serif";
+ctx0.fillText("LabEAD", 220, 242);
+ctx0.beginPath();
+for(i=0;i<=10;i++){x=256/10*i;ctx0.moveTo(0,x); ctx0.lineTo(384,x);}
+for(i=0;i<=17;i++){y=384/17*i;ctx0.moveTo(y,0); ctx0.lineTo(y,256);}
+ctx0.stroke();
+ctx0.fillStyle ="#606060";ctx0.font = "18px Verdana";
+ctx0.fillText("0.5V/div 1ms/div", 6, 19);
+var p_x=new Array();
+var vpp=[0,0,0,0,0];
+var vme=[0,0,0,0];
+function graf(xx,w){
+	var ctx=eval("ctx"+xx);
+	ctx.clearRect(0, 0, 384, 256);
+	min=1023; max=0;
+	t=0; st=1; prev_st=1;
+	for(y in w){
+		x=256-(w[y]/4);
+		if(y>0){
+			ctx.beginPath();
+			ctx.moveTo((y-1)*384/99, p_x[y-1]+1 );
+			ctx.lineTo(y*384/99, x+1 );
+			ctx.stroke();
+		}
+		p_x[y]=x;
+		if(w[y]<min) min=w[y];
+		if(w[y]>max) max=w[y];
+		if(w[y]>=w[0]) st=1; else st=0;
+		if((prev_st==0)&&(st==1)&&(t==0)) t=y;
+		prev_st=st;
+	}
+	vpp[xx]=(max-min)/1023*5;
+	vme[xx-1]=(max+min)/2/1023*5;
+	eval("vpp1").value=vpp[1].toFixed(2)+"Vpp";
+	eval("A0").value=vme[0].toFixed(2)+"Vm";
+	for(i=1;i<=3;i++){
+		j=i+1;
+		if(eval("cbv"+i).checked==true){
+			eval("vpp"+j).value=vpp[j].toFixed(2)+"Vpp";
+			eval("A"+i).value=vme[i].toFixed(2)+"Vm";
+		}
+	}
+	if(xx==1){t*=0.17;ms1.value=t.toFixed(1)+"ms";}
+}
+function graf_clr(xx){
+	i=xx-1;
+	var ctx=eval("ctx"+xx);
+	ctx.clearRect(0, 0, 384, 256);
+	eval("vpp"+xx).value="";
+}
+</script>
+<!-- /Osciloscopio -->
+
+<!-- Osciloscopio/Voltimetro -->
+<style>
+	.tdv{padding:1px;font-size:10px;text-align:center;border:solid 1px silver;border-radius:4px;vertical-align:top;}
+	input[type=number]::-webkit-inner-spin-button {opacity: 1;height:20px;}
+	.vo{width:62px;margin:0;font-size:12px;border:solid 1px silver;border-radius:4px;text-align:center;background-color:black;}
+	.vp{width:62px;padding:2px 0 2px 0;font-size:12px;height:20px;margin:0;text-align:center;background-color:black;}
+</style>
+<div style="width:64px;left:392;top:9px;text-align:center;border:none;position:absolute;padding:0;">
+<table cellpadding="0" cellspacing="1" align="center"><tr>
+<td class="tdv"><label style="font-size:11px;">V0</label><input type="text" id="A0" class="vo" tabindex="-1" style="color:red;">
+<br><input id="vpp1" class="vp" type="text" style="color:red;"><input id="ms1" class="vp" type="text" style="color:red;"></td>
+<td class="tdv"><label style="font-size:11px;">V1</label><input type="text" id="A1" class="vo" tabindex="-1" style="color:green;">
+<br><input id="vpp2" class="vp" type="text" style="color:green;"><input id="cbv1" type="checkbox" style="margin:4px;vertical-align:middle;"></td>
+<td class="tdv"><label style="font-size:11px;">V2</label><input type="text" id="A2" class="vo" tabindex="-1" style="color:blue;">
+<br><input id="vpp3" class="vp" type="text" style="color:blue;"><input id="cbv2" type="checkbox" style="margin:4px;vertical-align:middle;"></td>
+<td class="tdv"><label style="font-size:11px;">V3</label><input type="text" id="A3" class="vo" tabindex="-1" style="color:#B0B000;">
+<br><input id="vpp4" class="vp" type="text" style="color:#B0B000;"><input id="cbv3" type="checkbox" style="margin:4px;vertical-align:middle;"></td>
+</tr></table>
+</div>
+<!-- /Osciloscopio/Voltimetro -->
+
+<!-- Trigger -->
+<style>
+.nut{height:20px;width:54px;margin:1px;text-align:center;}
+</style>
+<div style="top:87px;left:392px;width:64px;text-align:center;border:solid 1px silver;border-radius:4px;position:absolute;">
+<p style="font-size:10px;margin:4px 0 2px 0;">Trigger (V0)</p>
+<input class="nut" id="v_sinc" type="number" value="2.34" min="0" max="5.0" step="0.02">
+<br><label style="font-size:12px;"><input id="cb1" type="checkbox" style="margin:4px 0 5px 0;vertical-align:middle;">Parar</label>
+</div>
+<!-- /Trigger -->
+
+<!-- Fonte -->
+<style>
+	.nuv{width:43px;font-size:10px;height:20px;margin:0;text-align:center;}
+</style>
+<div style="top:87px;left:460px;width:198px;text-align:center;border:solid 1px silver;border-radius:4px;position:absolute;">
+<p style="font-size:10px;margin:3px 0 1 0;">Fonte</p>
+<table cellpadding="0" cellspacing="1" align="center"><tr>
+<td class="tdv">E0 (D6)<br><input step="0.01" class="nuv" type="number" min="0" max="5" onchange="v_f(6,this.value);"></td>
+<td class="tdv">E1 (D5)<br><input step="0.01" class="nuv" type="number" min="0" max="5" onchange="v_f(5,this.value);"></td>
+<td class="tdv">E2 (D3)<br><input step="0.01" class="nuv" type="number" min="0" max="5" onchange="v_f(3,this.value);"></td>
+<td class="tdv">E3 (D9)<br><input step="0.01" class="nuv" type="number" min="0" max="5" onchange="v_f(9,this.value);"></td>
+</tr>
+</table>
+</div>
+<script>
+function v_f(port,value){value=value/5*255;ser+="&anw="+port+","+value.toFixed(0);}
+</script>
+<!-- /Fonte -->
+
+<!-- Gerador -->
+<div style="top:152px;left:392px;width:64px;text-align:center;border:solid 1px silver;border-radius:4px;position:absolute;">
+<style>
+input[type=number]::-webkit-inner-spin-button {opacity: 1;}
+input{border-radius:4px;border:solid 1px silver;}
+.nug{height:20px;width:60px;margin:1px;text-align:center;}
+.gen_bs{padding:0px;margin:1px;height:22px;width:30px;font-size:12px;font-weight:normal;border-radius:4px;border:solid 1px silver;}
+</style>
+<p style="font-size:10px;margin:5px 0 2px 0;">Gerador (D9)</p>
+<input class="nug" type="number" id="gen_n" min="30" max="660" step="1" onchange="gen_f();">
+<br><button class="gen_bs"
+ onclick="gen_n.value=60;gen_f();">60</button><button class="gen_bs"
+ onclick="gen_n.value=120;gen_f();">120</button><button class="gen_bs"
+ onclick="gen_n.value=240;gen_f();">240</button><button class="gen_bs"
+ onclick="gen_n.value=300;gen_f();">300</button><button class="gen_bs"
+ onclick="gen_n.value=480;gen_f();">480</button><button class="gen_bs"
+ onclick="gen_n.value=600;gen_f();">600</button>
+</div>
+
+<script>
+function gen_f(){
+	val=(gen_n.value-2)/600*164;
+	if(val>255) val=255;
+	ser+="&anw=10,"+val.toFixed(0);
+	cb1.checked=false;
+	gen_n.title=val.toFixed(0);
+}
+</script>
+<!-- /Gerador -->
+
+<!-- Digital -->
+<style>
+	.tdd{width:44px;padding:2px 0 1px 0;font-size:10px;text-align:center;border:solid 1px silver;border-radius:4px;}
+	.led{margin-bottom:2px;cursor:hand;background-color:silver;border-style:outset;width:16px;height:16px;border-radius:16px;}
+	.btn_d{width:28px;height:16px;font-size:10px;margin:1px 6px 1px 6px ;border:solid 1px silver;border-radius:4px;}
+</style>
+<div style="left:460px;top:144px;width:198px;text-align:center;border:solid 1px silver;border-radius:4px;position:absolute;">
+<p style="font-size:10px;margin:2px 0 2px 0;">Digital</p>
+<table align="center">
+<tr>
+<td class="tdd">D8<br><button class=led id="D8" onclick="dig_f(8,2);"><br><button class="btn_d" type="button" onclick="dig_f(8,1);">1</button>
+<br><button class="btn_d" type="button" onclick="dig_f(8,0);">0</button></td>
+<td class="tdd">D11<br><button class=led id="D11" onclick="dig_f(11,2);"><br><button class="btn_d" type="button" onclick="dig_f(11,1);">1</button>
+<br><button class="btn_d" type="button" onclick="dig_f(11,0);">0</button></td>
+<td class="tdd">D12<br><button class=led id="D12" onclick="dig_f(12,2);"><br><button class="btn_d" type="button" onclick="dig_f(12,1);">1</button>
+<br><button class="btn_d" type="button" onclick="dig_f(12,0);">0</button></td>
+<td class="tdd">D13<br><button class=led id="D13" onclick="dig_f(13,2);"><br><button class="btn_d" type="button" onclick="dig_f(13,1);">1</button>
+<br><button class="btn_d" type="button" onclick="dig_f(13,0);">0</button></td>
+</tr>
+</table>
+</div>
+<script>
+function dig_f(port,value){
+	//if(value==2){ ser2+="&d"+port+"=0"; value=1; }
+	//ser+="&d"+port+"="+value;
+	if(value==2){ ser2+="&d="+port+",0"; value=1; }
+	ser+="&d="+port+","+value;
+}
+</script>
+<!-- /Digital -->
+
+<!-- Rele e Servo -->
+<style>
+	.btn_r{width:46px;height:18px;font-size:10px;margin:1px;border:solid 1px silver;border-radius:4px;}
+</style>
+<div style="padding:2 0 1 0;vertical-align:middle;top:237px;left:460;width:198px;font-size:10px;text-align:center;border:solid 1px silver;border-radius:4px;position:absolute;">
+<button id="re0" class="btn_r" onclick="re_ck(0);">Rele 4</button>
+<button id="re1" class="btn_r" onclick="re_ck(1);">Rele 7</button>
+Servo 2 <input style="margin:2 0 0 0;width:48px;text-align:center;" step="1" type="number" min="0" max="180" onchange="servo(2,this.value);">
+</div>
+<script>
+function servo(yy,xx){
+	while(ser.indexOf('&pos=')>=0){
+		sa=ser.substring(0,ser.indexOf('&pos='));
+		ser=ser.substring(ser.indexOf('&pos=')+5);
+		if(ser.indexOf("&")>=0){ sa+=ser.substring(ser.indexOf('&')); }
+		ser=sa;
+	}
+	ser+='&pos='+yy+','+xx;
+}
+function re_ck(xx){
+	if(eval("re"+xx).style.color!="blue"){ser+='&d='+re_map[xx]+',1';}
+	else{ser+='&d='+re_map[xx]+',0';}
+}
+</script>
+<!-- /Rele e Servo -->
+
+<div style="margin-bottom:5px;left:5;top:272px;height:268;width:648;padding:2px;text-align:center;border:solid 1px silver;border-radius:2px;position:absolute;">
+</div>
+</body>
+</html>

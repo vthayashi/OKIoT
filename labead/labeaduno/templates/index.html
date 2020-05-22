@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>LabEad</title>
+
+<style>
+body{margin:30px;}
+</style>
+
+<script>
+var client=new XMLHttpRequest();
+client.onreadystatechange=function(){
+	if(this.readyState==4){
+		if(this.status==200){
+			if(this.responseText!=""){
+				myObj=JSON.parse(this.responseText);
+			}
+		}
+	}
+}
+
+function iniciar(){
+}
+
+function load(){
+	sa="js?dw=";
+	client.open('GET', sa, true); client.send();
+}
+
+</script>
+</head>
+<body onload="iniciar();">
+<h2 align=center>LabEad</h2>
+<p align=center><a href="/scope">LabEad Uno 3</a></p>
+</body>
+</html>
