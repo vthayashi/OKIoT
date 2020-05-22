@@ -51,11 +51,13 @@ Montagem do shield de conversão de PWM para CC (Corrente Contínua), e shield d
 
 1x Fonte 9V regulada
 
+
+
 ### Esquemático e PCB
 - Realizar a montagem conforme [Esquemático e projeto do PCB](https://github.com/vthayashi/OKIoT/blob/master/labead/labeaduno/LabEadUno3_200521.fzz) (placas Gerador e D/A) desenvolvidos no [Fritzing](https://fritzing.org/home/)
+
+**Atenção**: caso as frequências da interface necessitem de calibração, é possível realizar ajustes na [página em HTML](https://github.com/vthayashi/OKIoT/blob/master/labead/labeaduno/templates/scope.html), através de editor [Notepad++](https://notepad-plus-plus.org/).
 
 ![Esquemático](https://github.com/vthayashi/OKIoT/blob/master/labead/img/esquematico.png)
 
 ![PCB](https://github.com/vthayashi/OKIoT/blob/master/labead/img/pcb.png)
-
-**Atenção**: caso as frequências da interface, é possível realizar ajustes na [página em HTML](https://github.com/vthayashi/OKIoT/blob/master/labead/labeaduno/templates/scope.html), através de editor [Notepad++](https://notepad-plus-plus.org/).
