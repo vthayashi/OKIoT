@@ -35,10 +35,14 @@ Descrição da configuração do Arduino IDE para carga de programa no Arduino U
 
 - Executar o programa [app.py](https://github.com/vthayashi/OKIoT/blob/master/labead/labeaduno/app.py) com duplo clique
 
+- Acessar http://127.0.0.1:5000/ para visualizar a interface web da bancada (há um [arquivo de atalho](https://github.com/vthayashi/OKIoT/blob/master/labead/labeaduno/LabEad.url))
+
 - Se precisar reiniciar o servidor, basta fechar a janela do Python (onde o log do servidor pode ser visualizado) e executar o [app.py](https://github.com/vthayashi/OKIoT/blob/master/labead/labeaduno/app.py) novamente.
 
+**Atenção**: ao reiniciar o servidor, fechar as janelas do navegador que estão acessando o endereço da página.
+
 ## Shields PWM e Gerador de Funções
-Introdução PWM para CC, e Gerador de Funções para CA
+Montagem do shield de conversão de PWM para CC (Corrente Contínua), e shield de Gerador de Funções para CA (Corrente Alternada).
 
 ### Lista de Materiais
 1x Arduino Uno
@@ -48,12 +52,10 @@ Introdução PWM para CC, e Gerador de Funções para CA
 1x Fonte 9V regulada
 
 ### Esquemático e PCB
-Descrição e menção ao Fritzing
+- Realizar a montagem conforme [Esquemático e projeto do PCB](https://github.com/vthayashi/OKIoT/blob/master/labead/labeaduno/LabEadUno3_200521.fzz) (placas Gerador e D/A) desenvolvidos no [Fritzing](https://fritzing.org/home/)
 
 ![Esquemático](https://github.com/vthayashi/OKIoT/blob/master/labead/img/esquematico.png)
 
 ![PCB](https://github.com/vthayashi/OKIoT/blob/master/labead/img/pcb.png)
 
-**Atenção**: ajuste no HTML (tbm poderia ser por potenciômetros no shield)
-
-**Atenção**: alerta flask warmup
+**Atenção**: caso as frequências da interface, é possível realizar ajustes na [página em HTML](https://github.com/vthayashi/OKIoT/blob/master/labead/labeaduno/templates/scope.html), através de editor [Notepad++](https://notepad-plus-plus.org/).
