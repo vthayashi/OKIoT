@@ -43,15 +43,67 @@ Descrição da configuração do Arduino IDE para carga de programa no Arduino U
 
 ## Shields PWM e Gerador de Funções
 Montagem do shield de conversão de PWM para CC (Corrente Contínua), e shield de Gerador de Funções para CA (Corrente Alternada).
+O gerador de funções foi construído a partir da montagem VCO (Voltage Controlled Oscillator).
 
 ### Lista de Materiais
+
+#### Geral
+
 1x Arduino Uno
 
 1x Cabo USB para Arduino Uno
 
 1x Fonte 9V regulada
 
+#### Shield CC
 
+1x Placa Padrão ilhada 44x80 mm
+
+1x CI LM324
+
+4x resistor de carbono 10kOhm 1/4W
+
+4x capacitor eletrolítico 22uF 16V
+
+1x barra de pinos macho 1x40 vias 11,5 mm 180o (35/40 pinos utilizados)
+
+1x barra de pino 1x40 femea 180o (26/40 pinos utilizados)
+
+#### Shield CA
+
+1x Placa Padrão ilhada 46x62 mm
+
+1x CI LM324
+
+2x transistor BC548
+
+3x diodo 1N4148
+
+2x capacitor eletrolítico 22uF 16V
+
+1x capacitor poliéster 47nF
+
+5x resistor de carbono 10kOhm
+
+1x resistor de carbono 3K3Ohm
+
+1x resistor carbono 4K7Ohm
+
+1x resistor carbono 22kOhm
+
+1x resistor carbono 33kOhm
+
+3x resistor carbono 47kOhm
+
+3x resistor carbono 100kOhm
+
+1x resistor carbono 180kOhm
+
+1x resistor carbono 330kOhm
+
+1x barra de pinos macho 1x40 vias 11,5 mm 180o (24/40 pinos utilizados)
+
+1x barra de pino 1x40 femea 180o (21/40 pinos utilizados)
 
 ### Esquemático e PCB
 - Realizar a montagem conforme [Esquemático e projeto do PCB](https://github.com/vthayashi/OKIoT/blob/master/labead/labeaduno/LabEadUno3_200521.fzz) (placas Gerador e D/A) desenvolvidos no [Fritzing](https://fritzing.org/home/)
