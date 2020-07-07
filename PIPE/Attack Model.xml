@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<token id="Default" enabled="true" red="0" green="0" blue="0"/>
+<labels x="423" y="38" width="76" height="55" border="true">
+<text>Google
+Dialogflow
+1.15s</text>
+</labels>
+<labels x="126" y="33" width="47" height="54" border="true">
+<text>Google
+SST
+1.75s</text>
+</labels>
+<labels x="766" y="31" width="47" height="53" border="true">
+<text>Google
+TTS
+1.41s</text>
+</labels>
+<place id="Copy_Failed">
+<graphics>
+<position x="345.0" y="390.0"/>
+</graphics>
+<name>
+<value>Copy_Failed</value>
+<graphics>
+<offset x="23.0" y="-10.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Intent">
+<graphics>
+<position x="705.0" y="105.0"/>
+</graphics>
+<name>
+<value>Intent</value>
+<graphics>
+<offset x="2.0" y="-14.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>5</value>
+</capacity>
+</place>
+<place id="NLU_Failed">
+<graphics>
+<position x="705.0" y="195.0"/>
+</graphics>
+<name>
+<value>NLU_Failed</value>
+<graphics>
+<offset x="18.0" y="-8.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P0">
+<graphics>
+<position x="180.0" y="105.0"/>
+</graphics>
+<name>
+<value>P0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P1">
+<graphics>
+<position x="510.0" y="105.0"/>
+</graphics>
+<name>
+<value>P1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P2">
+<graphics>
+<position x="855.0" y="105.0"/>
+</graphics>
+<name>
+<value>P2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P3">
+<graphics>
+<position x="180.0" y="300.0"/>
+</graphics>
+<name>
+<value>P3</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="P4">
+<graphics>
+<position x="345.0" y="300.0"/>
+</graphics>
+<name>
+<value>P4</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Replay_Failed">
+<graphics>
+<position x="510.0" y="390.0"/>
+</graphics>
+<name>
+<value>Replay_Failed</value>
+<graphics>
+<offset x="107.0" y="-16.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Replay_Succeed">
+<graphics>
+<position x="510.0" y="240.0"/>
+</graphics>
+<name>
+<value>Replay_Succeed</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="SST_Failed">
+<graphics>
+<position x="345.0" y="195.0"/>
+</graphics>
+<name>
+<value>SST_Failed</value>
+<graphics>
+<offset x="32.0" y="-12.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Success">
+<graphics>
+<position x="1050.0" y="105.0"/>
+</graphics>
+<name>
+<value>Success</value>
+<graphics>
+<offset x="2.0" y="-13.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Text">
+<graphics>
+<position x="345.0" y="105.0"/>
+</graphics>
+<name>
+<value>Text</value>
+<graphics>
+<offset x="1.0" y="-8.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>5</value>
+</capacity>
+</place>
+<place id="TTS_Failed">
+<graphics>
+<position x="1050.0" y="195.0"/>
+</graphics>
+<name>
+<value>TTS_Failed</value>
+<graphics>
+<offset x="18.0" y="-9.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Voice">
+<graphics>
+<position x="45.0" y="105.0"/>
+</graphics>
+<name>
+<value>Voice</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,100</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="Copy_Fail">
+<graphics>
+<position x="240.0" y="390.0"/>
+</graphics>
+<name>
+<value>Copy_Fail</value>
+<graphics>
+<offset x="74.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.5</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Copy_Success">
+<graphics>
+<position x="240.0" y="300.0"/>
+</graphics>
+<name>
+<value>Copy_Success</value>
+<graphics>
+<offset x="99.0" y="32.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.5</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="NLU">
+<graphics>
+<position x="435.0" y="105.0"/>
+</graphics>
+<name>
+<value>NLU</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.87</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="NLU_Fail">
+<graphics>
+<position x="585.0" y="195.0"/>
+</graphics>
+<name>
+<value>NLU_Fail</value>
+<graphics>
+<offset x="71.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.1</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="NLU_Sucess">
+<graphics>
+<position x="585.0" y="105.0"/>
+</graphics>
+<name>
+<value>NLU_Sucess</value>
+<graphics>
+<offset x="87.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.9</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Replay_Fail">
+<graphics>
+<position x="435.0" y="390.0"/>
+</graphics>
+<name>
+<value>Replay_Fail</value>
+<graphics>
+<offset x="82.0" y="38.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.2</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Replay_Success">
+<graphics>
+<position x="435.0" y="300.0"/>
+</graphics>
+<name>
+<value>Replay_Success</value>
+<graphics>
+<offset x="109.0" y="41.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.8</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="SST">
+<graphics>
+<position x="120.0" y="105.0"/>
+</graphics>
+<name>
+<value>SST</value>
+<graphics>
+<offset x="2.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.57</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="SST_Fail">
+<graphics>
+<position x="240.0" y="195.0"/>
+</graphics>
+<name>
+<value>SST_Fail</value>
+<graphics>
+<offset x="78.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.3</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="SST_Sucess">
+<graphics>
+<position x="240.0" y="105.0"/>
+</graphics>
+<name>
+<value>SST_Sucess</value>
+<graphics>
+<offset x="91.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.7</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="TTS">
+<graphics>
+<position x="780.0" y="105.0"/>
+</graphics>
+<name>
+<value>TTS</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.71</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="TTS_Fail">
+<graphics>
+<position x="930.0" y="195.0"/>
+</graphics>
+<name>
+<value>TTS_Fail</value>
+<graphics>
+<offset x="76.0" y="36.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.9</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="TTS_Success">
+<graphics>
+<position x="930.0" y="105.0"/>
+</graphics>
+<name>
+<value>TTS_Success</value>
+<graphics>
+<offset x="89.0" y="37.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>0.9</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="Copy_Fail to Copy_Failed" source="Copy_Fail" target="Copy_Failed">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="256" y="402" curvePoint="false"/>
+<arcpath id="001" x="342" y="402" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Copy_Success to P4" source="Copy_Success" target="P4">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="256" y="312" curvePoint="false"/>
+<arcpath id="001" x="342" y="312" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Intent to TTS" source="Intent" target="TTS">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="731" y="117" curvePoint="false"/>
+<arcpath id="001" x="786" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="NLU_Fail to NLU_Failed" source="NLU_Fail" target="NLU_Failed">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="601" y="207" curvePoint="false"/>
+<arcpath id="001" x="702" y="207" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="NLU_Sucess to Intent" source="NLU_Sucess" target="Intent">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="601" y="117" curvePoint="false"/>
+<arcpath id="001" x="702" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="NLU to P1" source="NLU" target="P1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="451" y="117" curvePoint="false"/>
+<arcpath id="001" x="507" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P0 to SST_Fail" source="P0" target="SST_Fail">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="199" y="129" curvePoint="false"/>
+<arcpath id="001" x="246" y="207" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P0 to SST_Sucess" source="P0" target="SST_Sucess">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="206" y="117" curvePoint="false"/>
+<arcpath id="001" x="246" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P1 to NLU_Fail" source="P1" target="NLU_Fail">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="531" y="128" curvePoint="false"/>
+<arcpath id="001" x="591" y="207" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P1 to NLU_Sucess" source="P1" target="NLU_Sucess">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="536" y="117" curvePoint="false"/>
+<arcpath id="001" x="591" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P2 to TTS_Fail" source="P2" target="TTS_Fail">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="876" y="128" curvePoint="false"/>
+<arcpath id="001" x="936" y="207" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P2 to TTS_Success" source="P2" target="TTS_Success">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="881" y="117" curvePoint="false"/>
+<arcpath id="001" x="936" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P3 to Copy_Fail" source="P3" target="Copy_Fail">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="199" y="324" curvePoint="false"/>
+<arcpath id="001" x="246" y="402" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P3 to Copy_Success" source="P3" target="Copy_Success">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="206" y="312" curvePoint="false"/>
+<arcpath id="001" x="246" y="312" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P4 to Replay_Fail" source="P4" target="Replay_Fail">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="367" y="322" curvePoint="false"/>
+<arcpath id="001" x="441" y="402" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P4 to Replay_Success" source="P4" target="Replay_Success">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="371" y="312" curvePoint="false"/>
+<arcpath id="001" x="441" y="312" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Replay_Fail to Replay_Failed" source="Replay_Fail" target="Replay_Failed">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="451" y="402" curvePoint="false"/>
+<arcpath id="001" x="507" y="402" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Replay_Success to Replay_Succeed" source="Replay_Success" target="Replay_Succeed">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="452" y="307" curvePoint="false"/>
+<arcpath id="001" x="510" y="261" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Replay_Success to Voice" source="Replay_Success" target="Voice">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="451" y="317" curvePoint="false"/>
+<arcpath id="001" x="643" y="313" curvePoint="false"/>
+<arcpath id="002" x="643" y="463" curvePoint="false"/>
+<arcpath id="003" x="58" y="463" curvePoint="false"/>
+<arcpath id="004" x="57" y="131" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="SST_Fail to SST_Failed" source="SST_Fail" target="SST_Failed">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="256" y="207" curvePoint="false"/>
+<arcpath id="001" x="342" y="207" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="SST_Sucess to Text" source="SST_Sucess" target="Text">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="256" y="117" curvePoint="false"/>
+<arcpath id="001" x="342" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="SST to P0" source="SST" target="P0">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="136" y="117" curvePoint="false"/>
+<arcpath id="001" x="177" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="SST to P3" source="SST" target="P3">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="132" y="132" curvePoint="false"/>
+<arcpath id="001" x="187" y="297" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Text to NLU" source="Text" target="NLU">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="371" y="117" curvePoint="false"/>
+<arcpath id="001" x="441" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TTS_Fail to TTS_Failed" source="TTS_Fail" target="TTS_Failed">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="946" y="207" curvePoint="false"/>
+<arcpath id="001" x="1047" y="207" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TTS_Success to Success" source="TTS_Success" target="Success">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="946" y="117" curvePoint="false"/>
+<arcpath id="001" x="1047" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TTS to P2" source="TTS" target="P2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="796" y="117" curvePoint="false"/>
+<arcpath id="001" x="852" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Voice to SST" source="Voice" target="SST">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="71" y="117" curvePoint="false"/>
+<arcpath id="001" x="126" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>
