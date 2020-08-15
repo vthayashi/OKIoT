@@ -12,7 +12,7 @@ Inicialmente, após abrir o aplicativo do Blynk no celular pela primeira vez, se
 
 Após a criação da conta com login e senha no aplicativo, será necessário criar um projeto no Blynk. Selecione a opção New Project. Uma tela será apresentada onde é necessário escolher o nome do projeto, o dispositivo e o tipo de conexão. O nome do projeto aqui é arbitrário (por exemplo, Oficina LabEAD). O dispositivo deverá ser necessariamente o WeMos D1 mini e o tipo de conexão como Wi-Fi. 
  
---------------Criação de um projeto no Blynk
+![Criação de um projeto no Blynk](https://github.com/vthayashi/OKIoT/blob/master/labead/blynk/criacao.png)
 
 Após a criação do projeto, um token de autenticação é gerado e enviado para o email cadastrado. Guarde o email ou anote o token de autenticação.
 
@@ -26,5 +26,5 @@ Após adicionar o Terminal ao projeto, será necessário mapear esse terminal em
 Feito isso, pode-se voltar para a tela do projeto, clicando na seta ⇐ no canto superior esquerdo.
 
 Com o projeto pronto no aplicativo, é possível ativá-lo clicando no botão Play localizado no canto superior esquerdo.
- 
---------------Configuração do projeto para conexão com a bancada remota
+
+![Configuração do projeto para conexão com a bancada remota](https://github.com/vthayashi/OKIoT/blob/master/labead/blynk/terminal.png)
