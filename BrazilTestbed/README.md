@@ -25,4 +25,4 @@ Two sensors are installed in each room:
 
 The sensors relay events to datalogger module [see more details](https://github.com/vthayashi/OKIoT/tree/master/Datalogger) by Radio Frequency 433 MHz transmitters [see more details](http://www.energiazero.org/arduino_sensori/Complete%20Guide%20for%20RF%20433MHz%20Transmitter.pdf).
 
-[![daily activity heatmap demo](heatmapvideo.PNG)](https://www.youtube.com/watch?v=g2xVXFFxnaM)
+[![daily activity heatmap demo](heatmapvideo.png)](https://www.youtube.com/watch?v=g2xVXFFxnaM)
