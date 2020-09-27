@@ -1,0 +1,95 @@
+Room		Out	Garage	Stairs	Laundry	Kitchen	LRoom	Storage	Hall	RoomB	RoomG	RoomC	Bath
+Delay		500	5	5	50	20	20	5	5	50	50	50	10
+
+
+Person\Room	Out2Garage
+Brother		1
+Sister		1
+Father		1
+Mother		1
+
+Person\Room	Garage2Out	Garage2Stairs
+Brother		0.5		0.5		
+Sister		0.5		0.5
+Father		0.3		0.7
+Mother		0.1		0.9
+
+Person\Room	Stairs2Garage	Stairs2Laundry
+Brother		0.5		0.5
+Sister		0.5		0.5
+Father		0.5		0.5
+Mother		0.5		0.5
+
+Person\Room	Laundry2Stairs	Laundry2LRoom
+Brother		0.5		0.5
+Sister		0.5		0.5
+Father		0.5		0.5
+Mother		0.5		0.5
+
+Person\Room	LRoom2Laundry	LRoom2Kitchen
+Brother		0.5		0.5
+Sister		0.1		0.9
+Father		0.5		0.5
+Mother		0.1		0.9
+
+Person\Room	Kitchen2LRoom	Kitchen2Storage		Kitchen2Hall
+Brother		0.5		0.1			0.4
+Sister		0.5		0.1			0.4
+Father		0.5		0.1			0.4
+Mother		0.3		0.3			0.4
+
+Person\Room	Storage2Kitchen
+Brother		1
+Sister		1
+Father		1
+Mother		1
+
+Person\Room	Hall2RoomB	Hall2RoomG	Hall2RoomC	Hall2Bath	Hall2Kitchen
+Brother		0.5		0.1		0.1		0.2		0.1
+Sister		0.1		0.5		0.1		0.2		0.1
+Father		0.1		0.1		0.5		0.2		0.1
+Mother		0.1		0.1		0.5		0.2		0.1
+
+Person\Room	RoomB2Hall	RoomG2Hall	RoomC2Hall	Bath2Hall
+Brother		1		1		1		1
+Sister		1		1		1		1
+Father		1		1		1		1
+Mother		1		1		1		1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
