@@ -5,7 +5,7 @@ It constains data collected by datalogger module in a Brazilian household in 201
 
 The raw data is available in folders 201908 (August), 201909 (September) and 201910 (October).
 
-Preprocessed data of most frequent events can be found in FrequentEvents.csv file.
+Preprocessed data of most frequent events of one moenth (2019 August) can be found in FrequentEvents.csv file.
 
 ![Domus](OKIoTtestbed.jpg)
 
